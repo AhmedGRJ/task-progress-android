@@ -1,0 +1,47 @@
+name: Build Android APK
+
+# Builds an installable APK of the Android app in the cloud (no Android Studio needed).
+# Run it from the Actions tab ("Run workflow"), or it runs on every push that touches the app.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'npm-console-android/**'
+      - 'npm-progress-pwa/**'
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: npm-console-android
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Copy the dashboard into the app and sync Capacitor
+        run: npm run sync
+
+      - name: Build debug APK
+        working-directory: npm-console-android/android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: task-progress-android-apk
+          path: npm-console-android/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

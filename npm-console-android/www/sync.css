@@ -1,0 +1,35 @@
+/* Sync dialog and header chip. Uses the dashboard theme variables. */
+#syncBtn .sy-ic{ display:inline-block; }
+#syncBtn .sy-ic.spin{ animation:syspin 1s linear infinite; }
+@keyframes syspin{ to{ transform:rotate(360deg); } }
+#syncBtn.sy-err{ color:var(--coral); border-color:var(--coral); }
+.sy-modal{ max-height:92vh; overflow:auto; }
+.sy-modal label{ display:block; font-size:12.5px; color:var(--sub); margin:10px 0 0; }
+.sy-modal label input:not([type=checkbox]), .sy-modal label select{ display:block; width:100%; margin-top:4px; padding:7px 9px; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; font:inherit; font-size:13.5px; box-sizing:border-box; }
+.sy-modal .sy-sw{ display:flex; gap:8px; align-items:flex-start; color:var(--text); font-size:13.5px; }
+.sy-modal .sy-sw input{ margin-top:3px; }
+.sy-row{ display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; }
+.sy-row > label{ flex:1 1 160px; }
+.sy-inline{ display:flex !important; gap:8px; align-items:center; }
+.sy-inline input{ flex:1; min-width:0; }
+.sy-inline .btn{ flex:none; margin-top:4px; }
+.sy-tabs{ display:flex; gap:6px; margin:14px 0 4px; flex-wrap:wrap; }
+.sy-tabs button{ padding:6px 12px; background:transparent; color:var(--sub); border:1px solid var(--line); border-radius:999px; font:inherit; font-size:13px; cursor:pointer; }
+.sy-tabs button.on{ color:var(--text); border-color:var(--signal); background:color-mix(in srgb, var(--signal) 14%, transparent); }
+.sy-pane{ padding:2px 0 4px; }
+.sy-sub{ margin:6px 0 2px 24px; }
+.sy-hint{ font-size:12px; color:var(--sub); line-height:1.45; margin-top:6px; font-weight:400; }
+.sy-warn{ margin-bottom:2px; }
+.sy-bad{ color:var(--coral); }
+.sy-line{ font-size:13px; padding:7px 10px; border-radius:8px; background:color-mix(in srgb, var(--line) 45%, transparent); color:var(--sub); margin-bottom:8px; }
+.sy-line.ok{ color:var(--signal); } .sy-line.err{ color:var(--coral); } .sy-line.busy{ color:var(--amber, var(--text)); }
+.sy-setup{ margin-top:14px; padding-top:12px; border-top:1px solid var(--line); }
+.sy-setup .sy-inline{ flex:1 1 220px; }
+.sy-ask{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+.sy-ask .btn{ text-align:left; }
+.sy-modal .row{ flex-wrap:wrap; }
+
+.sy-chip{ margin-left:auto; align-self:center; margin-bottom:6px; padding:5px 11px; background:transparent; color:var(--sub); border:1px solid var(--line); border-radius:999px; font:inherit; font-size:12.5px; cursor:pointer; white-space:nowrap; flex:none; }
+.sy-chip:hover{ color:var(--text); border-color:var(--sub); }
+.sy-chip.sy-ok{ color:var(--signal); } .sy-chip.sy-err{ color:var(--coral); border-color:var(--coral); }
+.sy-chip .sy-ic{ display:inline-block; } .sy-chip .sy-ic.spin{ animation:syspin 1s linear infinite; }

@@ -1,0 +1,23 @@
+{
+  "name": "task-progress-console",
+  "productName": "Task Progress",
+  "version": "1.0.0",
+  "description": "NPM 4G/5G/VoLTE task planner and progress console",
+  "main": "main.js",
+  "author": "Ahmed Graja",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --config electron-builder.config.js",
+    "dist:win": "electron-builder --config electron-builder.config.js --win",
+    "serve-updates": "node tools/serve-updates.js dist 8099",
+    "postinstall": "node tools/ensure-electron.js",
+    "setup": "node tools/ensure-electron.js"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^25.1.8"
+  }
+}

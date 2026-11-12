@@ -1,0 +1,26 @@
+/* Phone layout (the Android app and the web app on a small screen). Desktop is untouched above 720px. */
+@media (max-width: 720px){
+  html{ -webkit-text-size-adjust:100%; }
+  body{ padding-top:env(safe-area-inset-top); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); padding-bottom:env(safe-area-inset-bottom); }
+  .controls{ display:flex; flex-wrap:nowrap !important; overflow-x:auto; gap:8px; padding-bottom:6px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .controls::-webkit-scrollbar{ display:none; }
+  .controls .btn, .controls label.btn{ flex:none; white-space:nowrap; min-height:40px; }
+  .controls .spacer{ display:none; }
+  #tabBar{ display:flex; overflow-x:auto; flex-wrap:nowrap !important; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  #tabBar::-webkit-scrollbar{ display:none; }
+  #tabBar .tab-btn{ flex:none; white-space:nowrap; }
+  .sy-chip{ position:sticky; right:0; background:var(--bg); padding:5px 9px; }
+  .sy-chip .sy-t{ display:none; }
+  .sy-chip.sy-err .sy-t{ display:inline; }
+  .btn, button, select, input{ min-height:38px; }
+  input, select, textarea{ font-size:16px !important; } /* stops the zoom-on-focus on phones */
+  .modal{ width:94vw !important; max-width:94vw !important; padding:18px 16px !important; max-height:90vh; overflow:auto; }
+  .table-wrap, .tbl-wrap, [id$="TableWrap"], .wrap-table{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ font-size:12.5px; }
+  .toast{ max-width:92vw; }
+  .pl-side, .pl-sidebar{ display:none; }
+  #dtb{ display:none; }
+}
+@media (max-width: 720px) and (pointer: coarse){
+  .cm-it{ padding:11px 12px; }
+}

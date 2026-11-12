@@ -1,0 +1,59 @@
+/* Evidence: thumbnails, viewer, dialog. Uses the dashboard theme variables. */
+.ev-box{ outline:none; border-radius:10px; transition:background .12s, box-shadow .12s; }
+.ev-box:focus-visible{ box-shadow:0 0 0 2px var(--signal); }
+.ev-box.drop{ background:color-mix(in srgb, var(--signal) 14%, transparent); box-shadow:0 0 0 2px var(--signal) inset; }
+.ev-row{ display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.ev-th{ position:relative; width:54px; height:54px; padding:0; border-radius:9px; overflow:hidden; border:1px solid var(--line); background:var(--panel-2); cursor:pointer; flex:none; color:var(--text); font:inherit; }
+.ev-th:hover{ border-color:var(--signal); }
+.ev-th:focus-visible{ outline:2px solid var(--signal); outline-offset:1px; }
+.ev-th img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ev-th.file{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:4px; }
+.ev-th.file b{ font-size:12px; letter-spacing:.04em; color:var(--signal); }
+.ev-th.file span{ font-size:9.5px; color:var(--sub); max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ev-th.more{ display:grid; place-items:center; font-weight:700; color:var(--sub); }
+.ev-add{ display:inline-flex; align-items:center; gap:6px; height:54px; min-width:54px; justify-content:center; padding:0 12px; border:1.5px dashed var(--line); background:transparent; color:var(--sub); border-radius:9px; font:inherit; font-size:12.5px; font-weight:600; cursor:pointer; flex:none; }
+.ev-add:hover{ border-color:var(--signal); color:var(--text); }
+.ev-add:focus-visible, .ev-link:focus-visible{ outline:2px solid var(--signal); outline-offset:2px; }
+.ev-hint{ margin-top:6px; font-size:11.5px; color:var(--sub); line-height:1.4; }
+.ev-link{ background:none; border:none; color:var(--signal); font:inherit; font-size:11.5px; cursor:pointer; padding:0 2px; }
+.ev-link:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+/* cards in the dashboard */
+.tc-ev{ margin-top:10px; padding-top:9px; border-top:1px dashed var(--line); }
+.tc-ev .ev-th, .tc-ev .ev-add{ width:40px; height:40px; min-width:40px; padding:0; }
+.tc-ev .ev-add{ padding:0 10px; width:auto; }
+.tc-ev .ev-th.file span{ display:none; }
+
+/* sub-task dialog */
+.ev-sec{ margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
+.ev-sec-h{ font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--sub); font-weight:700; margin-bottom:6px; }
+
+/* planner popover */
+.pp-ev{ margin-bottom:4px; }
+
+/* viewer */
+.ev-lb{ position:fixed; inset:0; z-index:8000; display:flex; flex-direction:column; background:rgba(8,10,14,.96); color:#e8ecf2; }
+body.desktop .ev-lb{ padding-top:36px; }
+.ev-lb-bar{ display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid rgba(255,255,255,.12); }
+.ev-lb-t{ flex:1; min-width:0; display:flex; flex-direction:column; }
+.ev-lb-t b{ font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ev-lb-t span{ font-size:12px; opacity:.65; }
+.ev-b{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); color:inherit; border-radius:8px; padding:6px 12px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; }
+.ev-b:hover{ background:rgba(255,255,255,.16); }
+.ev-b.danger{ color:#ff8a8a; }
+.ev-b:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+.ev-lb-body{ flex:1; min-height:0; display:grid; place-items:center; padding:18px; overflow:auto; }
+.ev-lb-body img{ max-width:100%; max-height:100%; object-fit:contain; border-radius:6px; box-shadow:0 10px 40px rgba(0,0,0,.5); background:#fff; }
+.ev-lb-body pre{ margin:0; align-self:start; justify-self:stretch; max-width:1100px; white-space:pre-wrap; word-break:break-word; font-family:'Cascadia Mono',Consolas,monospace; font-size:12.5px; line-height:1.5; background:rgba(255,255,255,.06); padding:16px; border-radius:10px; }
+.ev-lb-file{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+.ev-lb-file b{ font-size:34px; letter-spacing:.06em; }
+.ev-lb-file span{ opacity:.7; font-size:14px; }
+
+/* standalone dialog */
+.ev-modal{ position:fixed; inset:0; z-index:7500; display:grid; place-items:center; background:rgba(0,0,0,.5); padding:16px; }
+.ev-card{ width:min(560px,100%); max-height:88vh; overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:15px; padding:14px 18px 18px; color:var(--text); box-shadow:0 24px 70px rgba(0,0,0,.5); }
+.ev-card-h{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+.ev-card-h h3{ margin:0; font-family:'Orbitron',sans-serif; font-size:14.5px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ev-card .ev-b{ background:var(--panel-2); border-color:var(--line); color:var(--text); }
+.ev-card .ev-th, .ev-card .ev-add{ width:76px; height:76px; }
+.ev-card .ev-add{ width:auto; }

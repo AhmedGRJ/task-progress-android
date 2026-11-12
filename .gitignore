@@ -1,0 +1,13 @@
+node_modules/
+dist/
+npm-console-android/android/app/build/
+npm-console-android/android/build/
+npm-console-android/android/.gradle/
+npm-console-android/android/local.properties
+npm-console-android/android/capacitor-cordova-android-plugins/build/
+*.tmp-*
+relay-data/
+.venv/ 
+venv/ 
+.idea/ 
+node_modules/

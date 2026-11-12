@@ -1,0 +1,15 @@
+{
+  "appId": "com.ahmedgraja.taskprogress",
+  "appName": "Task Progress",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
